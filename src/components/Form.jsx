@@ -1,14 +1,25 @@
 import { useState } from "react";
 
 const Form = () => {
+   const [name, setName]=useState("");
+   const [email, setEmail]=useState("");
+   const [password, setPassword]=useState("");
+//    console.log({name, email, password})
+   const [error, setError]=useState("");
 
+   const handleSubmit = (e)=>{
+        e.preventDefault();
+        setName("");
+        setEmail("");
+        setPassword("");
+   }
   return (
     <div className="mx-auto pb-3">
       <h1 className="text-3xl mb-5 font-bold text-green-600 text-center">
         Form Validation
       </h1>
 
-      <form className="max-w-lg mx-auto mt-11 px-5 py-5 border border-gray-400 rounded shadow-lg space-y-4">
+      <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-11 px-5 py-5 border border-gray-400 rounded shadow-lg space-y-4">
         {/* form start*/}
 
         <div className="card bg-base-100 shadow-2xl py-8">
